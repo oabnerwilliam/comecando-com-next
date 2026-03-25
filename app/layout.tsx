@@ -2,6 +2,10 @@ import { Header } from "./components/header";
 import "./globals.css";
 import { Container } from "./components/container";
 import { Metadata } from "next";
+import { Inter } from "next/font/google";
+import { cn } from "@/lib/utils";
+
+const inter = Inter({subsets:['latin'],variable:'--font-sans'});
 
 export const metadata: Metadata = {
   title: "Começando com Next.js",
@@ -35,7 +39,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className={cn("font-sans", inter.variable)}>
       <body className="antialiased">
         <Header />
         <Container>
