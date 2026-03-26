@@ -11,16 +11,17 @@ import {
   SelectValue,
 } from "../../../components/ui/select"
 import { createPost } from "../../actions/post"
-import { useQuery, useQueryClient } from "@tanstack/react-query"
-import { getUsers } from "../../actions/user"
+import { useQuery } from "@tanstack/react-query"
 import { useRouter } from "next/navigation"
+import { request } from "../../utils/request"
+import { User } from "../../../generated/prisma/client"
 
 export const PostForm = () => {
   const router = useRouter()
 
   const { data: users } = useQuery({
     queryKey: ["users"],
-    queryFn: async () => await getUsers(),
+    queryFn: async () => await request<User[]>("users"),
     staleTime: 1000 * 60 * 5,
   })
 
