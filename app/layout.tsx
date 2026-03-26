@@ -1,11 +1,12 @@
-import { Header } from "./components/header";
-import "./globals.css";
-import { Container } from "./components/container";
-import { Metadata } from "next";
-import { Inter } from "next/font/google";
-import { cn } from "@/lib/utils";
+import { Header } from "./components/header"
+import "./globals.css"
+import { Container } from "./components/container"
+import { Metadata } from "next"
+import { Inter } from "next/font/google"
+import { cn } from "@/lib/utils"
+import { TanstackQueryProvider } from "./providers/query-client-provider"
 
-const inter = Inter({subsets:['latin'],variable:'--font-sans'});
+const inter = Inter({ subsets: ["latin"], variable: "--font-sans" })
 
 export const metadata: Metadata = {
   title: "Começando com Next.js",
@@ -26,26 +27,26 @@ export const metadata: Metadata = {
       index: true,
       follow: true,
       noimageindex: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
     },
   },
-};
+}
 
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode;
+  children: React.ReactNode
 }>) {
   return (
     <html lang="en" className={cn("font-sans", inter.variable)}>
       <body className="antialiased">
         <Header />
-        <Container>
-          {children}
-        </Container>
+        <TanstackQueryProvider>
+          <Container>{children}</Container>
+        </TanstackQueryProvider>
       </body>
     </html>
-  );
+  )
 }
