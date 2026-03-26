@@ -1,4 +1,4 @@
-import { Navlink } from "../navlink"
+import { Navlink } from "./Navlink";
 
 export const Header = () => {
   return (
@@ -6,7 +6,8 @@ export const Header = () => {
       <nav className="flex items-center justify-center gap-6 px-6 py-4">
         <Navlink href="/">Home</Navlink>
         <Navlink href="/posts">Posts</Navlink>
+        <Navlink href="/users">Users</Navlink>
       </nav>
     </header>
-  )
-}
+  );
+};
