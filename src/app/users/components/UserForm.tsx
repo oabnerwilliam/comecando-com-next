@@ -2,7 +2,7 @@
 
 import { useForm } from "react-hook-form"
 import { useRouter } from "next/navigation"
-import { createUser } from "../../actions/user"
+import { createUser } from "../../../actions/user"
 import { Input } from "../../../components/ui/input"
 import { Button } from "../../../components/ui/button"
 

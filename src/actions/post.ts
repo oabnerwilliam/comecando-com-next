@@ -1,6 +1,6 @@
 "use server"
 
-import { prisma } from "../../lib/prisma"
+import { prisma } from "../lib/prisma"
 
 export const getPostsByUserId = async (userId: string) =>
   prisma.post.findMany({

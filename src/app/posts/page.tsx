@@ -5,11 +5,11 @@ import {
   CardHeader,
   CardTitle,
 } from "../../components/ui/card"
-import { getPosts } from "../actions/post"
-import { getUsers } from "../actions/user"
+import { getPosts } from "../../actions/post"
+import { getUsers } from "../../actions/user"
 import { PostForm } from "./components/PostForm"
 
-async function Posts() {
+export default async function Posts() {
   const posts = await getPosts()
   const users = await getUsers()
 
@@ -42,5 +42,3 @@ async function Posts() {
     </div>
   )
 }
-
-export default Posts

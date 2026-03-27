@@ -10,11 +10,11 @@ import {
   SelectTrigger,
   SelectValue,
 } from "../../../components/ui/select"
-import { createPost } from "../../actions/post"
+import { createPost } from "../../../actions/post"
 import { useQuery } from "@tanstack/react-query"
 import { useRouter } from "next/navigation"
-import { request } from "../../utils/request"
-import { User } from "../../../generated/prisma/client"
+import { request } from "../../../utils/request"
+import { User } from "../../../../generated/prisma/client"
 
 export const PostForm = () => {
   const router = useRouter()
